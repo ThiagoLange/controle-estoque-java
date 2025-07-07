@@ -12,7 +12,6 @@ public class ControleDeEstoque {
         // Variável para a quantidade em estoque (utilizando 'int' para números inteiros)
         int quantidadeProduto1 = 100; // Ex: 100 quilos
 
-
         // --- PRODUTO 2: BATATAS ---
 
         // Variável para o nome do produto
@@ -23,7 +22,6 @@ public class ControleDeEstoque {
 
         // Variável para a quantidade em estoque
         int quantidadeProduto2 = 250; // Ex: 250 quilos
-
 
         // --- PRODUTO 3: CEBOLAS ---
 
@@ -36,11 +34,5 @@ public class ControleDeEstoque {
         // Variável para a quantidade em estoque
         int quantidadeProduto3 = 180; // Ex: 180 quilos
 
-
-        // Exemplo de como exibir as informações no console
-        System.out.println("--- ESTOQUE ATUAL ---");
-        System.out.println("Produto: " + nomeProduto1 + " | Preço: R$" + precoProduto1 + " | Quantidade: " + quantidadeProduto1 + " kg");
-        System.out.println("Produto: " + nomeProduto2 + " | Preço: R$" + precoProduto2 + " | Quantidade: " + quantidadeProduto2 + " kg");
-        System.out.println("Produto: " + nomeProduto3 + " | Preço: R$" + precoProduto3 + " | Quantidade: " + quantidadeProduto3 + " kg");
     }
 }
