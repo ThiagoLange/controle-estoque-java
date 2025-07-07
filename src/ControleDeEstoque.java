@@ -32,9 +32,10 @@ public class ControleDeEstoque {
 
             try {
                 opcao = scanner.nextInt();
+
                 switch (opcao) {
                     case 1:
-                        // --- INÍCIO DA LÓGICA DE VENDA ---
+                        // LÓGICA DE VENDA
                         System.out.println("\n--- REALIZAR VENDA ---");
                         System.out.println("Qual produto deseja vender?");
                         System.out.println("[1] " + nomeProduto1);
@@ -46,27 +47,26 @@ public class ControleDeEstoque {
                         System.out.print("Qual a quantidade a ser vendida (em kg)? ");
                         int quantidadeVenda = scanner.nextInt();
 
-                        // Verifica qual produto foi escolhido e processa a venda
                         switch (produtoVenda) {
-                            case 1: // Venda de Tomates
+                            case 1:
                                 if (quantidadeVenda > 0 && quantidadeVenda <= quantidadeProduto1) {
-                                    quantidadeProduto1 -= quantidadeVenda; // Subtrai do estoque
+                                    quantidadeProduto1 -= quantidadeVenda;
                                     System.out.println("\n✅ Venda de " + quantidadeVenda + " kg de " + nomeProduto1 + " realizada com sucesso!");
                                 } else {
                                     System.out.println("\n❌ Erro: Estoque insuficiente ou quantidade inválida! Quantidade disponível: " + quantidadeProduto1 + " kg.");
                                 }
                                 break;
-                            case 2: // Venda de Batatas
+                            case 2:
                                 if (quantidadeVenda > 0 && quantidadeVenda <= quantidadeProduto2) {
-                                    quantidadeProduto2 -= quantidadeVenda; // Subtrai do estoque
+                                    quantidadeProduto2 -= quantidadeVenda;
                                     System.out.println("\n✅ Venda de " + quantidadeVenda + " kg de " + nomeProduto2 + " realizada com sucesso!");
                                 } else {
                                     System.out.println("\n❌ Erro: Estoque insuficiente ou quantidade inválida! Quantidade disponível: " + quantidadeProduto2 + " kg.");
                                 }
                                 break;
-                            case 3: // Venda de Cebolas
+                            case 3:
                                 if (quantidadeVenda > 0 && quantidadeVenda <= quantidadeProduto3) {
-                                    quantidadeProduto3 -= quantidadeVenda; // Subtrai do estoque
+                                    quantidadeProduto3 -= quantidadeVenda;
                                     System.out.println("\n✅ Venda de " + quantidadeVenda + " kg de " + nomeProduto3 + " realizada com sucesso!");
                                 } else {
                                     System.out.println("\n❌ Erro: Estoque insuficiente ou quantidade inválida! Quantidade disponível: " + quantidadeProduto3 + " kg.");
@@ -75,11 +75,42 @@ public class ControleDeEstoque {
                             default:
                                 System.out.println("\n❌ Opção de produto inválida!");
                         }
-                        // --- FIM DA LÓGICA DE VENDA ---
                         break;
                     case 2:
-                        System.out.println("\n--- OPÇÃO SELECIONADA: [2] REPOSIÇÃO ---");
-                        // Aqui será desenvolvida a lógica de reposição de estoque
+                        // --- INÍCIO DA LÓGICA DE REPOSIÇÃO ---
+                        System.out.println("\n--- REALIZAR REPOSIÇÃO ---");
+                        System.out.println("Qual produto deseja repor?");
+                        System.out.println("[1] " + nomeProduto1);
+                        System.out.println("[2] " + nomeProduto2);
+                        System.out.println("[3] " + nomeProduto3);
+                        System.out.print("Escolha o produto: ");
+                        int produtoReposicao = scanner.nextInt();
+
+                        System.out.print("Qual a quantidade a ser adicionada (em kg)? ");
+                        int quantidadeReposicao = scanner.nextInt();
+
+                        // Verifica qual produto foi escolhido e processa a reposição
+                        if (quantidadeReposicao > 0) {
+                            switch (produtoReposicao) {
+                                case 1: // Reposição de Tomates
+                                    quantidadeProduto1 += quantidadeReposicao; // Adiciona ao estoque
+                                    System.out.println("\n✅ Reposição de " + quantidadeReposicao + " kg de " + nomeProduto1 + " realizada com sucesso! Novo estoque: " + quantidadeProduto1 + " kg.");
+                                    break;
+                                case 2: // Reposição de Batatas
+                                    quantidadeProduto2 += quantidadeReposicao; // Adiciona ao estoque
+                                    System.out.println("\n✅ Reposição de " + quantidadeReposicao + " kg de " + nomeProduto2 + " realizada com sucesso! Novo estoque: " + quantidadeProduto2 + " kg.");
+                                    break;
+                                case 3: // Reposição de Cebolas
+                                    quantidadeProduto3 += quantidadeReposicao; // Adiciona ao estoque
+                                    System.out.println("\n✅ Reposição de " + quantidadeReposicao + " kg de " + nomeProduto3 + " realizada com sucesso! Novo estoque: " + quantidadeProduto3 + " kg.");
+                                    break;
+                                default:
+                                    System.out.println("\n❌ Opção de produto inválida!");
+                            }
+                        } else {
+                            System.out.println("\n❌ Erro: A quantidade para reposição deve ser maior que zero.");
+                        }
+                        // --- FIM DA LÓGICA DE REPOSIÇÃO ---
                         break;
                     case 3:
                         System.out.println("\n--- OPÇÃO SELECIONADA: [3] RELATÓRIO ---");
